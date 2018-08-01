@@ -9,7 +9,7 @@ app.use('/songs/:id', express.static(path.join(__dirname, '../public')));
 // app.use(express.static(path.join(__dirname, '../public')));
 
 
-app.listen(2000, () => console.log('Proxy server conected on 2000'));
+app.listen(2332, () => console.log('Proxy server conected on 2332'));
 
 /*when the proxy receives a get request from /songs/:id
 it triggers a get request in the each of the four components
