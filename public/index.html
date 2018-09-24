@@ -1,33 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="./style.css">
-    <title>FEC Demo</title>
-  </head>
-  <body>
- <div id='container'>
-    <div id='top'>
-      <div id="musicPlayer"></div>
-      <div id="albumModal"></div>
+<html>
+<head>
+  <title>StreamBoard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet"> 
+  <script src="./lib/react.development.js"></script>
+  <script src="./lib/react-dom.development.js"></script>
+</head>
+
+<body>
+  <!-- Static Skeleton -->
+  <div class='container'>
+    <div class='banner'>
+      <button type='button' class="bannerButton" id="logo">
+        <i class="fas fa-sliders-h"> </i> <b>STREAMBOARD</b></button>
+      <button type='button' class="bannerButton"> Charts </button>
+      <form>
+        <input type="text" name="search" size="80">
+      </form>
+      <button type='button' class="bannerButton" id="signIn">Sign in</button>
+      <button type='button' class="bannerButton" id="createAcct">Create account</button>
+      <button type='button' class="bannerButton">Upload</button>
+      <button type='button' class="bannerButton"><b>...</b></button>
+    </div>
+    <div class='top'>
+      <div id='musicPlayer'>music player</div>
+      <div id='albumModal'></div>
       <div id='waveform'></div>
     </div>
-    <div id='bottom'>
-      <div id='artistInfo'></div>
-      <div id='comments'></div>
-      <div id='suggestedTracks'></div>
+    <div class="bottom">
+      <div class="commentForm">
+        <div class='submitComment'>
+          <div id='avatar'>
+          </div>
+          <div id='commentInput'>
+            <input/>
+          </div>
+        </div>
+        <div id='commentButtons'>
+          <button type='button' class="commentsButton">
+            <i class="fas fa-heart"></i>Like</button>
+          <button type='button' class="commentsButton">
+            <i class="fas fa-retweet"></i>Repost</button>
+          <button type='button' class="commentsButton">
+            <i class="fas fa-share"></i>Share</button>
+          <button type='button' class="commentsButton">
+            <i class="fas fa-ellipsis-h"></i>More</button>
+        </div>
+      </div>
+      <div class="listings">
+        <div id='artistInfo'>
+          <img src='https://s3-us-west-1.amazonaws.com/streamboardimages/artistInfo.png'>
+        </div>
+        <div id='comments'>CommentsList component</div>
+        <div id='suggestedTracks'>SuggestedTracks component</div>
+      </div>
     </div>
+    <div class='footer'>
+      <button type='button' class="footerButton">
+        <i class="fas fa-step-backward"></i>
+      </button>
+      <button type='button' class="footerButton">
+        <i class="fas fa-play"></i>
+      </button>
+      <button type='button' class="footerButton">
+        <i class="fas fa-step-forward"></i>
+      </button>
+      <button type='button' class="footerButton">
+        <i class="fas fa-random"></i>
+      </button>
+      <button type='button' class="footerButton">
+        <i class="fas fa-undo"></i>
+      </button>
+      <p>0:00</p>
+      <div id='horizLine'></div>
+      <p>0:00 </p>
+      <button type='button' class="footerButton">
+        <i class="fas fa-volume-up"></i>
+      </button>
+      <!-- <img src='https://s3-us-west-1.amazonaws.com/streamboardimages/artistfooter.png'> -->
+      <span id='artistFooter'></span>
+      <button type='button' class="footerButton">
+        <i class="fas fa-heart"></i>
+      </button>
+      <button type='button' class="footerButton">
+        <i class="fas fa-list"></i>
+      </button>
+    </div>
+  
   </div>
-<!--     <script src="/lib/react.development.js"></script>
-    <script src="/lib/react-dom.development.js"></script> -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-   <!--  <link rel= "stylesheet" href="/style.css"/> -->
-    <script src="http://localhost:4001/bundle.js"></script>
-    <script src="http://localhost:6969/bundle.js"></script>
-    <script src="http://localhost:3000/waveform.js"></script>
-    <script src="http://localhost:1458/bundle.js"></script>
-    <!-- see: https://reactjs.org/docs/react-without-jsx.html -->
-    <script>
-    </script>
-  </body>
+  <script src="https://s3-us-west-1.amazonaws.com/streamboardimages/bundle.js"></script>
+  <script src="https://s3-us-west-1.amazonaws.com/streamboard98/misc/bundle.js"></script>
+  <script src="http://ec2-52-53-154-227.us-west-1.compute.amazonaws.com/waveForm.js"></script>
+  <script src="https://s3-us-west-1.amazonaws.com/streamboard98-comments/bundle.js"></script>
+</body>
 </html>
